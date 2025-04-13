@@ -20,7 +20,7 @@ resource "aws_instance" "web_1" {
     private_key = file("${path.module}/private_key/venkat_singapore.pem")
   }
   provisioner "file" {
-    source      = "apps/index.html"
+    source      = "${path.module}/apps/index.html"
     destination = "/tmp/index.html"
   }
     provisioner "remote-exec" {
@@ -53,7 +53,7 @@ resource "aws_instance" "web_2" {
     private_key = file("${path.module}/private_key/venkat_singapore.pem")
   }
   provisioner "file" {
-    source      = "apps/index.html"
+    source      = "${path.module}/apps/index.html"
     destination = "/tmp/index.html"
   }
     provisioner "remote-exec" {
